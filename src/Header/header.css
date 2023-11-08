@@ -1,0 +1,320 @@
+.toponeH{
+    display: flex;
+    /* justify-content: space-evenly; */
+    gap: 5%;
+    background-color: black;
+    min-height: 50px;
+    max-height: 80px;
+    padding: 0px 35px;
+}
+
+.logo{
+    background-image: url("./img/shopping-logo.png");
+    width: 50%;
+    height: 50px;
+    background-size: contain; 
+    background-repeat: no-repeat;    
+}
+
+.address{
+    color: aliceblue;
+    width: 50%;
+    font-size: larger;
+    font-weight: 400;
+    font: italic;
+    padding: 0.5% 0%;
+}
+
+.searchbar{
+    padding-top: 17px;
+    width: 200%;
+    display: flex;
+}
+
+.searchinput{
+    width: 100%;
+    border-radius: 10px;
+    height: 28px;
+    background-color: lightyellow;
+    font: italic;
+}
+
+.searchbtn{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 21px;
+    padding: 3px 4px;
+    cursor: pointer;
+}
+
+.info{
+    color: aliceblue;
+    padding: 1%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-style: italic;
+}
+
+.cart{
+    background-image: url("./img/cart.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40%;
+    color: brown;
+    text-align: start;
+}
+
+.CartLink{
+    text-decoration: none;
+    color: brown;
+}
+
+
+
+
+/* ///////////////////////////  TopTwoHeader //////////////////////////////// */
+
+
+
+.top2header{
+    min-height: 40px;
+    width: 100%;
+    background-color: #232f3e;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 14px;
+}
+
+.NavLink{
+    text-decoration: none;
+    font-family: Franklin Gothic Medium,Arial Narrow,Arial,sans-serif;
+}
+
+/* CSS for the dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    margin-top: 8px;
+    color: black;
+    min-width: 150px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dropdown-content li {
+    padding: 8px 12px;
+  }
+  
+  .dropdown-content a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    color: rgb(34, 138, 117);
+    background-color: lightcoral;
+  }
+  
+  .formobile{
+    display: none;
+  }
+
+
+  
+/* /////////////////////////////////// MEDIA QUAIRY FOR MOBILE PHONE /////////////////////////////////////////// */
+    
+
+@media only screen and (min-width: 200px) and (max-width:750px) {
+
+    .menu{
+        position: absolute;
+        top: 0.75rem;
+        right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    .menu span {
+            height: 0.4rem;
+            width: 100%;
+            background-color: #66d3ccf0;
+            border-radius: 0.2rem;
+    }
+
+    .links{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0.2rem 0.5rem;
+        padding: 0%;
+        line-height: 23px;
+    }
+
+    .clickon:hover{
+        background-color: #a2b5f2;
+    }
+
+    #close{
+        display: none;
+    }
+
+    #close.open{
+        display: flex;
+    }
+
+    .formobile{
+        display: inline-table;
+    }
+
+    .top2header{
+        display: block;
+        text-align: center;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .toponeH{
+        padding: 0px 0px;
+    }
+
+    .logo{
+        width: 70%;  
+    }
+    
+    .address{
+        display: none;
+    }
+    
+    .searchbar{
+        width: 100%;
+        padding-top: 10px;
+    }
+    
+    .searchinput{
+        width: 60%;
+    }
+
+    .info1{
+        display: none;
+    }
+    
+    .cart1{
+        display: none;
+    }
+    
+}   
+
+
+/* /////////////////////////////////// MEDIA QUAIRY FOR TABLATES /////////////////////////////////////////// */
+    
+
+@media only screen and (min-width: 750px) and (max-width:1050px) {
+
+    .menu{
+        position: absolute;
+        top: 0.75rem;
+        right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    .menu span {
+            height: 0.4rem;
+            width: 100%;
+            background-color: #66d3ccf0;
+            border-radius: 0.2rem;
+    }
+
+    .links{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0.2rem 0.5rem;
+        padding: 0%;
+        line-height: 23px;
+    }
+
+    .clickon:hover{
+        background-color: #a2b5f2;
+    }
+
+    #close{
+        display: none;
+    }
+
+    #close.open{
+        display: flex;
+    }
+
+    .formobile{
+        display: inline-table;
+    }
+
+    .top2header{
+        display: block;
+        text-align: center;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    .toponeH{
+        padding: 0px 0px;
+    }
+
+    .logo{
+        width: 40%;  
+    }
+    
+    .address{
+        display: none;
+    }
+    
+    .searchbar{
+        width: 100%;
+        padding-top: 10px;
+    }
+    
+    .searchinput{
+        width: 80%;
+    }
+
+    .info1{
+        display: none;
+    }
+    
+    .cart1{
+        display: none;
+    }
+    
+}   

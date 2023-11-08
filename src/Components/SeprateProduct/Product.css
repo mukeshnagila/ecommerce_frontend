@@ -1,0 +1,126 @@
+.Productpage{
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+    /* flex-wrap: wrap; */
+}
+
+.forImg{
+    padding: 10px;
+    background-color: #f2f2f2;
+    height: 450px;
+    width: 50%;
+    text-align: center;
+}
+
+.forinfo{
+    width: 50%;
+    padding: 1% 5%;
+}
+
+.forPprice{
+    border: 1px solid rgb(234, 234, 242);
+    padding: 0px 10px;
+}
+
+.proImg{
+    width: 80%;
+    height: 100%;
+}
+
+.proname{
+    color: rgb(139, 139, 163);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Mier demi";
+}
+
+.pprice{
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(196, 155, 102);
+}
+
+.oldprice{
+    color: rgb(244, 70, 70);
+    text-decoration: line-through;
+}
+
+.pofferprice{
+    color: rgb(82, 212, 82);
+}
+
+.freeD{
+    width: 20%;
+    background-color: lightcyan;
+    text-align: center;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+.forPdetail{
+    line-height: 30px;
+}
+
+.forPbrand{
+    color: tomato;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.forPbtn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Pcartbtn{
+    background-color: orange;
+    border-radius: 25px;
+    width: 40%;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 0%;
+}
+
+.Pbuybtn{
+    background-color: rgb(118, 185, 118);
+    border-radius: 25px;
+    width: 40%;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 0%;
+}
+
+.Pcartbtn:hover{
+    box-shadow: 5px 5px 10px gray;
+}
+
+.Pbuybtn:hover{
+    box-shadow: 5px 5px 10px gray;
+}
+
+.foraddgif{
+    width: 100%;
+    height: 350px;
+}
+
+
+@media only screen and (min-width:150px) and (max-width:750px) {
+    .Productpage{
+        display: block;
+        padding: 0%;
+    }
+    
+    .forImg{
+        width: 100%;
+        padding: 0%;
+    }
+    
+    .forinfo{
+        width: 100%;
+        padding: 0% 0%;
+    }
+}

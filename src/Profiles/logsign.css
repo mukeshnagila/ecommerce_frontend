@@ -1,0 +1,24 @@
+.login{
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_sbSlTvbaEi2cak2Yh_1UvFTSuSHU0azCw&usqp=CAU"); */
+    background-color: antiquewhite;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: contain;
+    text-align: center;
+    margin-top: -1%;
+}
+
+.forform{
+    background-color: aquamarine;
+    width: 100%;
+    height: 250px;
+    border-radius: 50%;
+    padding-top: 2%;
+}
+
+form{
+    text-align: center;
+    font-size: large;
+    line-height: 35px;
+}

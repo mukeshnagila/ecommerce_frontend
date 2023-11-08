@@ -1,0 +1,175 @@
+/* /////////////////////// Home Page Css ////////////////////// */
+
+.bestproduct{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    column-gap: 5px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    padding: 1% 0%;
+}
+
+.BPitem{
+    min-height: 400px;
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+.BPitem:hover{
+    box-shadow: 5px 4px 10px #e6ddd0;
+}
+
+.heading{
+    text-align: center;
+    color: lightcoral;
+    text-shadow: 5px 5px 8px gray;
+    text-decoration: underline;
+}
+
+.ourstatus{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.status1{
+    height: 300px;
+    /* background-color: #F6F7F8; */
+    width: 25%;
+}
+
+.statusIMG{
+    height: 100px;
+    width: 100%;
+}
+
+/* ///////////// */
+
+.productimage{
+    width: 100%;
+    height: 350px;
+}
+
+.pbrand{
+    color: #b19975;
+    margin: 0%;
+}
+
+.pname{
+    font-weight: 600;
+    color: darkslategray;
+}
+
+.pprice{
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(196, 155, 102);
+}
+
+.oldprice{
+    color: rgb(244, 70, 70);
+    text-decoration: line-through;
+}
+
+.pofferprice{
+    color: rgb(82, 212, 82);
+}
+
+.cartbtn{
+    background-color: orange;
+    border-radius: 25px;
+    width: 70%;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 0%;
+}
+
+.cartbtn:hover{
+    box-shadow: 5px 5px 10px gray;
+}
+
+
+/* //////////////// ELECTRONIC PAGE CSS //////////////////////////// */
+
+.electronic{
+    display: flex;
+    padding: 1%;
+    width: 98%;
+}
+
+.ECatArea{
+    width: 25%;
+    background-color: #f2dbbd;
+    padding: 0px 5px;
+}
+
+.Eproduct{
+    width: 75%;
+}
+
+.ECname{
+    color: rgb(43, 40, 40);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: underline;
+}
+
+li{
+    color: rgb(62, 49, 49);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    cursor: pointer;
+}
+
+li:hover{
+    text-shadow: 5px 5px 5px gray;
+    font-size: 20px;
+}
+
+.Ecategory{
+    background-color: rgb(235, 239, 242);
+    min-height: 350px;
+}
+
+.Link{
+    text-decoration: none;
+}
+
+.forfix{
+    position: fixed;
+}
+
+/* ///////////////////////////////////MEDIA-QUARI/////////////////////// */
+
+@media only screen and (min-width:150px) and (max-width:750px) {
+    .electronic{
+        display: block;
+    }
+    
+    .ECatArea{
+        width: 100%;
+        padding: 0%;
+    }
+    
+    .Eproduct{
+        width: 100%;
+    }
+
+    .BPitem {
+        width: 85%;
+    }
+
+    .ourstatus{
+        display: block;
+    }
+    
+    .status1{
+        height: 300px;
+        /* background-color: #F6F7F8; */
+        width: 100%;
+    }
+}
