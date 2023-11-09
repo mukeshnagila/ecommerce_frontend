@@ -62,10 +62,20 @@ function TopTwoHeader(){
             <div className="top2header">
                     
                     <div className="cart formobile">
-                        <h3>0</h3>
+                        <NavLink className="CartLink" to="/Cart">
+                            <h3>0</h3>
+                        </NavLink>    
                     </div>
-                    <div className="info formobile">
-                        Profile
+                    <div className="info formobile" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
+                        <NavLink className="NavLink" style={({isActive}) => ({color : isActive ? "lightgray" : "aliceblue"})}>Profile</NavLink>
+                            {isDropdownVisible && (
+                                <div className="dropdown-content">
+                                <ul>
+                                    <li><NavLink to="/login">Login</NavLink></li>
+                                    <li><NavLink to="/register">Register</NavLink></li>
+                                </ul>
+                                </div>
+                            )}
                     </div>
 
                     <NavLink className="NavLink dropdown" onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "lightgreen" : "aliceblue"})} to="/">Home</NavLink>

@@ -1,19 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
 import { store } from "../Store/DataStore";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../CartFile/CartFunctions/cartAction";
+import AddCardBtn from "../CartFile/AddCardBtn/AddCardBtn";
 
 function Electronic() {
     
-    const dispatch = useDispatch()
-    
     const [Sdata] = useContext(store);
-    // console.log(Sdata);
-
-    const AddToCart = (product) => {
-        dispatch(addToCart(product));
-    }
 
     return(
         <>  
@@ -54,9 +46,9 @@ function Electronic() {
                                         </Link>
                                         <div className="Productinfo">
                                                 <h2 className="pbrand">{item.minicategory}</h2>
-                                                <Link className="Link" to={`/Product/${item.id}`}><p className="pname">{item.name.slice(0, 30)}....</p></Link>
+                                                <Link className="Link" to={`/Product/${item.id}`}><p className="pname">{item.name && item.name.slice(0, 30)}....</p></Link>
                                                 <h2 className="pprice"><span className="pofferprice">₹{item.price}</span> <span className="oldprice">₹{item.oldprice}</span> (20% OFF)</h2>
-                                                <button className="cartbtn" onClick={ () => AddToCart(item)}>Add Cart</button>
+                                                <AddCardBtn product={item}/>
                                         </div>
                                         </div> 
                                         </>

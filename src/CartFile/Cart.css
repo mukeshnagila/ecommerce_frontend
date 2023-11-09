@@ -82,3 +82,38 @@
     height: 80px;
     padding: 1%;
 }
+
+
+@media Only screen and (min-width: 200px) and (max-width: 750px) {
+    
+    .middle-box {
+        width: 100%;
+        display: block;
+    }
+    
+    .content1 {
+        width: 65%;
+        box-shadow: 0px 0px 0px 0px gray;
+        margin: auto;
+    }
+    
+    .contentHeading{
+        display: none;
+    }
+    
+    .contentdata{
+        display: block;
+    }
+    
+    .content2 {
+        width: 100%;        
+        box-shadow: 0px 0px 0px 0px gray;
+        margin: auto;
+    }
+
+    .cartimg{
+        width: 50%;
+        height: 200px;
+    }
+
+}

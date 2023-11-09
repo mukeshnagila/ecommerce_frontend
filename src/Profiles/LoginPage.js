@@ -39,7 +39,7 @@ function LoginPage() {
                         if(res.data.message === "User is not correct. Please enter the correct details"){
                             navi("/login")
                         }else{
-                            navi("/")
+                            navi("/register")
                         }
                     })
                     .catch((err) => console.log(err))

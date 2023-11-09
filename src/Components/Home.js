@@ -6,6 +6,7 @@ import refund from "../images/refund.svg";
 import support from "../images/support.svg";
 import { store } from "../Store/DataStore";
 import { Link } from 'react-router-dom';
+import AddCardBtn from "../CartFile/AddCardBtn/AddCardBtn";
 
 
 function Home() {
@@ -30,7 +31,7 @@ function Home() {
                                                 <h2 className="pbrand">{item.minicategory}</h2>
                                                 <Link className="Link" to={`/Product/${item.id}`}><p className="pname">{item.name.slice(0, 30)}....</p></Link>
                                                 <h2 className="pprice"><span className="pofferprice">₹{item.price}</span> <span className="oldprice">₹{item.oldprice}</span> (20% OFF)</h2>
-                                                <button className="cartbtn">Add Cart</button>
+                                                <AddCardBtn product={item}/>
                                         </div>
                                 </div> 
                         )
