@@ -38,6 +38,8 @@ function LoginPage() {
 
                         if(res.data.message === "User is not correct. Please enter the correct details"){
                             navi("/login")
+                        }else if(res.data.message === "user logged in successfully"){
+                            navi("/")
                         }else{
                             navi("/register")
                         }

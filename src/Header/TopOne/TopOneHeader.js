@@ -3,6 +3,7 @@ import "../header.css"
 import { FaLocationDot } from "react-icons/fa6";
 import { AiOutlineSearch } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function TopOneHeader(){
 
@@ -11,6 +12,8 @@ function TopOneHeader(){
     const handleDropdownToggle = () => {
         setDropdownVisible(!isDropdownVisible);
     };
+
+    const totalItems = useSelector((state) => state.cart.items.reduce((total, item) => total + item.quantity, 0)) || 0;
     
     return(
         <>
@@ -36,7 +39,7 @@ function TopOneHeader(){
                     </div>
                         <div className="cart cart1">
                             <NavLink className="CartLink" to="/Cart">        
-                                    <h3>0</h3>
+                                    <h3>{totalItems}</h3>
                             </NavLink>
                         </div>
                 </div>

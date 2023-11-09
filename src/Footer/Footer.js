@@ -2,11 +2,12 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import LastFooter from "../Footer/LastFooter";
 import "../Footer/footer.css";
+// import { store } from "../Store/DataStore";
 // import { store } from "../../../ContextStore/ContextStore";
 
 function Footer(){
 
-    // const [cdata] = useContext(store);
+    // const [Sdata] = useContext(store);
     // console.log(cdata);
 
     const scrollToTop = () => {
@@ -28,34 +29,15 @@ function Footer(){
                         <h4>Email: nagilamukesh43@gmail.com</h4>
                         <h4>Address: Pithoragarh, Uttrakhand</h4>
                         <div className="icons">
-                                        {/* {cdata.filter((item) => item.category === 'FooterIcon1').map((item, index) => {
-                                            return(
-                                                <>
-                                                    <a href="https://www.instagram.com/nagilabhai/"><img src={item.image} alt="instaimg"></img></a>
-                                                </>
-                                            )
-                                        })}
-                                        {cdata.filter((item) => item.category === 'FooterIcon2').map((item, index) => {
-                                            return(
-                                                <>
-                                                    <a href="https://www.facebook.com/mukesh.nagila.9"><img src={item.image} alt="instaimg"></img></a>
-                                                </>
-                                            )
-                                        })}
-                                        {cdata.filter((item) => item.category === 'FooterIcon3').map((item, index) => {
-                                            return(
-                                                <>
-                                                    <a href="https://www.linkedin.com/in/mukesh-nagila-989775255/"><img src={item.image} alt="instaimg"></img></a>
-                                                </>
-                                            )
-                                        })}
-                                        {cdata.filter((item) => item.category === 'FooterIcon4').map((item, index) => {
-                                            return(
-                                                <>
-                                                    <a href="https://www.youtube.com/channel/UC0KGSCNE-RF1CLY3gUmop8A"><img src={item.image} alt="instaimg"></img></a>
-                                                </>
-                                            )
-                                        })} */}
+                                        
+                                <a href="https://www.instagram.com/nagilabhai/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8eOT653mBX7lWxEzfkypBRxyVCJZi6b-pG7sC28c&s" alt="instaimg"></img></a>           
+                                        
+                                <a href="https://www.facebook.com/mukesh.nagila.9"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/768px-Facebook_icon.svg.png" alt="instaimg"></img></a>
+
+                                <a href="https://www.linkedin.com/in/mukesh-nagila-989775255/"><img src="https://pbs.twimg.com/profile_images/1661161645857710081/6WtDIesg_400x400.png" alt="instaimg"></img></a>
+                                                
+                                <a href="https://www.youtube.com/channel/UC0KGSCNE-RF1CLY3gUmop8A"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/800px-YouTube_full-color_icon_%282017%29.svg.png" alt="instaimg"></img></a>
+                                                
                         </div>
                     </div>
                     <div className="Fbox2">
@@ -66,8 +48,8 @@ function Footer(){
                         <h3>Quick Link's</h3>                    
                         <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/" >Home</NavLink></div>
                         <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Electronic" >Electronic</NavLink></div>
-                        <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Sports" >Sports</NavLink></div>
-                        <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Fitness" >Fitness</NavLink></div>
+                        <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Kitchen" >Kitchen</NavLink></div>
+                        {/* <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Fitness" >Fitness</NavLink></div> */}
                         <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Men" >Men's</NavLink></div>
                         <div><NavLink onClick={scrollToTop} style={({isActive}) => ({color : isActive ? "blue" : "green"})} className='Linkline' to="/Women" >Women's</NavLink></div>
                     </div>

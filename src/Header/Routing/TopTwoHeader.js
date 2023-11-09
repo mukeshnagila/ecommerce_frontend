@@ -28,11 +28,14 @@ import Handbag from "../../SubCategory/Handbag";
 import LoginPage from "../../Profiles/LoginPage";
 import RegisterPage from "../../Profiles/RegisterPage";
 import Cart from "../../CartFile/Cart";
+import { useSelector } from "react-redux";
 
 
 function TopTwoHeader(){
 
     const [menuOpen, SetMenuOpen] = useState(false);
+
+    const totalItems = useSelector((state) => state.cart.items.reduce((total, item) => total + item.quantity, 0)) || 0;
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -63,7 +66,7 @@ function TopTwoHeader(){
                     
                     <div className="cart formobile">
                         <NavLink className="CartLink" to="/Cart">
-                            <h3>0</h3>
+                            <h3>{totalItems}</h3>
                         </NavLink>    
                     </div>
                     <div className="info formobile" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>

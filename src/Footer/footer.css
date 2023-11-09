@@ -2,7 +2,8 @@
     text-align: center;
     padding: 1% 5%;
     box-shadow: -5px -5px 60px rgb(51, 51, 51);
-    background-image: linear-gradient(45deg, red, yellow, red, yellow,red,yellow,red, transparent);
+    /* background-image: linear-gradient(45deg, red, yellow, red, yellow,red,yellow,red, transparent); */
+    background-image: repeating-linear-gradient(45deg, #70d1d4b3, transparent 90px);;
 }
 
 .Fcontainer{

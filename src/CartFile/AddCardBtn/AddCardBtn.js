@@ -8,6 +8,7 @@ const AddCardBtn = ({ product }) => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    alert("Item Added Succefully");
   };
 
   return (
