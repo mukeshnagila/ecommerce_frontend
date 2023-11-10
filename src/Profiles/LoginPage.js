@@ -29,7 +29,7 @@ function LoginPage() {
         }
 
         if(email && password) {
-            axios.post("http://localhost:5008/api/login", data)
+            axios.post("https://ecom-backend-project.onrender.com/api/login", data)
                     .then((res) => {
                         console.log(res.data);
                         setresponsemsg(res.data.message)

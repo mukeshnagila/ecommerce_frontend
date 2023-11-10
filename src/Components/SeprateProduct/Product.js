@@ -47,7 +47,11 @@ function Product(){
                                 </div><br/><br/>
 
                                 <div className="forPbtn">
-                                        <button className="Pcartbtn" onClick={() => handleAddToCart(item)}>Add Cart</button>
+                                {localStorage.getItem("token") ? (
+                                        <button className="Pcartbtn" onClick={() => handleAddToCart(item)}>Add Cart</button>) : 
+                                        (
+                                                <button className="PcartbtnForLogin"><Link className="productLinkBtn" to="/login">Log in first</Link></button>        
+                                        )}
                                         <button className="Pbuybtn">Buy Now</button>
                                 </div><br/><br/>
 

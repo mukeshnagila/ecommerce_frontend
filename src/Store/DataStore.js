@@ -5,7 +5,7 @@ export const store = createContext();
 function DataStore(props) {
     const [data, setData] = useState([]);
     const fetchdata = () => {
-        return fetch("http://localhost:5008/api/findProduct")
+        return fetch("https://ecom-backend-project.onrender.com/api/findProduct")
             .then((response) => response.json())
             .then((user) => setData(user))
     }

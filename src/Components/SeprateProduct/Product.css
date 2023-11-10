@@ -107,6 +107,22 @@
     height: 350px;
 }
 
+.PcartbtnForLogin{
+    background-color: rgb(234, 234, 242);
+    border-radius: 25px;
+    width: 40%;
+    height: 50px;
+    cursor: pointer;
+}
+.productLinkBtn{
+    color: black;
+    text-decoration: none;
+}
+
+.PcartbtnForLogin:hover{
+    box-shadow: 5px 5px 10px gray;
+}
+
 
 @media only screen and (min-width:150px) and (max-width:750px) {
     .Productpage{

@@ -20,7 +20,7 @@ function RegisterPage() {
         empty.push(userdetail)
         console.log(userdetail);
 
-        axios.post("http://localhost:5008/api/register", userdetail)
+        axios.post("https://ecom-backend-project.onrender.com/api/register", userdetail)
                 .then((res) => {alert(res.data.message)
                 return navi("/login")})
                 .catch((err) => console.log(err))
