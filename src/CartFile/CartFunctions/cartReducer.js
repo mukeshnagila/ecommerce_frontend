@@ -1,5 +1,5 @@
 
-import { ADD_TO_CART, DECREASE_QUANTITY, REMOVE_FROM_CART } from "./cartAction";
+import { ADD_TO_CART, DECREASE_QUANTITY, REMOVE_FROM_CART, PLACE_ORDER } from "./cartAction";
 
 const initialState = {
   items: [],
@@ -71,8 +71,16 @@ const cartReducer = (state = initialState, action) => {
         items: state.items.filter((item) => item.id !== removedProductId),
       };
 
+      case PLACE_ORDER:
+            // Handle placing the order, e.g., reset the cart items
+            return {
+                ...state,
+                items: [],
+            };
+
     default:
       return state;
+      
   }
 };
 

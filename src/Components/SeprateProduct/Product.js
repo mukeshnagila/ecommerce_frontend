@@ -3,6 +3,8 @@ import "../SeprateProduct/Product.css";
 import { store } from "../../Store/DataStore";
 import { Link, useParams } from "react-router-dom";
 import AddCardBtn from "../../CartFile/AddCardBtn/AddCardBtn";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../CartFile/CartFunctions/cartAction";
 // import data from "../../../../server_ecom/Store/data";
 
 function Product(){
@@ -15,6 +17,13 @@ function Product(){
 
         const relatedData = Sdata[id].category;
         // console.log(relatedData);
+
+        const dispatch = useDispatch();
+
+        const handleAddToCart = (product) => {
+           dispatch(addToCart(product));
+           alert("Item Added Successfully");
+        };
         
     return(
         <>
@@ -38,7 +47,7 @@ function Product(){
                                 </div><br/><br/>
 
                                 <div className="forPbtn">
-                                        <button className="Pcartbtn">Add Cart</button>
+                                        <button className="Pcartbtn" onClick={() => handleAddToCart(item)}>Add Cart</button>
                                         <button className="Pbuybtn">Buy Now</button>
                                 </div><br/><br/>
 

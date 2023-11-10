@@ -2,7 +2,7 @@
 import React from "react";
 import "../CartFile/Cart.css";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, decreaseItemQuantity } from "./CartFunctions/cartAction"; // Import Redux actions here
+import { addToCart, decreaseItemQuantity, placeOrderAction } from "./CartFunctions/cartAction"; // Import Redux actions here
 
 function Cart() {
     const cartItems = useSelector((state) => state.cart.items) || [];
@@ -26,6 +26,11 @@ function Cart() {
     const decreaseQuantity = (item) => {
         console.log("Decreasing quantity for item:", item);
         dispatch(decreaseItemQuantity(item.id));
+    }
+
+    const placeOrder = () => {
+        dispatch(placeOrderAction());
+        alert("Your Order Is Placed Thank You For Shopping")
     }
     
 
@@ -76,7 +81,7 @@ function Cart() {
                             <h3>
                                 Subtotal <span className="ODI">({totalItems} items)</span>: ₹<span className="amount">{totalAmount}.00</span>
                             </h3>
-                            <button className="cartbtn">Proceed to Buy</button>
+                            <button className="cartbtn" onClick={placeOrder}>Proceed to Buy</button>
                         </div>
                     </div>
                 </div>

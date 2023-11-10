@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../header.css"
 import { FaLocationDot } from "react-icons/fa6";
 import { AiOutlineSearch } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function TopOneHeader(){
@@ -14,6 +14,13 @@ function TopOneHeader(){
     };
 
     const totalItems = useSelector((state) => state.cart.items.reduce((total, item) => total + item.quantity, 0)) || 0;
+    
+    const nav = useNavigate();
+    const handelLogout = () => {
+        localStorage.removeItem("token")
+        window.location.reload(true)
+        nav('/login')
+    }
     
     return(
         <>
@@ -31,16 +38,28 @@ function TopOneHeader(){
                         {isDropdownVisible && (
                             <div className="dropdown-content">
                             <ul>
+                            {localStorage.getItem("token") ? (
+                                <li><NavLink><button onClick={handelLogout} className="LogOutBTN">LogOut</button></NavLink></li>
+                                )   : (<>
                                 <li><NavLink to="/login">Login</NavLink></li>
                                 <li><NavLink to="/register">Register</NavLink></li>
+                                </>)
+                            } 
                             </ul>
                             </div>
                         )}
                     </div>
                         <div className="cart cart1">
+                        {localStorage.getItem("token") ? (
                             <NavLink className="CartLink" to="/Cart">        
                                     <h3>{totalItems}</h3>
+                            </NavLink>) : 
+                            (
+                            <NavLink className="CartLink" to="/login">        
+                                <h3>{totalItems}</h3>
                             </NavLink>
+                            )
+                        }    
                         </div>
                 </div>
             </div>

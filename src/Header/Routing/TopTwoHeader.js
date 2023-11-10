@@ -70,7 +70,7 @@ function TopTwoHeader(){
                         </NavLink>    
                     </div>
                     <div className="info formobile" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
-                        <NavLink className="NavLink" style={({isActive}) => ({color : isActive ? "lightgray" : "aliceblue"})}>Profile</NavLink>
+                        <NavLink to="/login" className="NavLink" style={({isActive}) => ({color : isActive ? "lightgray" : "aliceblue"})}>Profile</NavLink>
                             {isDropdownVisible && (
                                 <div className="dropdown-content">
                                 <ul>

@@ -2,6 +2,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../CartFunctions/cartAction";
+import { Link } from "react-router-dom";
 
 const AddCardBtn = ({ product }) => {
   const dispatch = useDispatch();
@@ -12,9 +13,19 @@ const AddCardBtn = ({ product }) => {
   };
 
   return (
-    <button className="cartbtn" onClick={handleAddToCart}>
-      Add to Cart
-    </button>
+    <>
+    {localStorage.getItem("token") ? (
+        <button className="cartbtn" onClick={handleAddToCart}>
+               Add to Cart
+        </button>):(
+          <Link to="/Login">
+              <button className="LogintoBuybtn">
+                    Login To Buy
+              </button>
+        </Link>
+        )
+    }
+    </>
   );
 };
 
