@@ -44,7 +44,7 @@ function Cart() {
 
     return (
         <>
-            <h1 style={{ color: "blueviolet", textAlign: "center" }}>Your Cart</h1>
+            <h1 className="forMQ" style={{ color: "blueviolet", textAlign: "center" }}>Your Cart</h1>
             <div className="outer-box">
                 <div className="middle-box">
                     <div className="content1">
@@ -64,7 +64,7 @@ function Cart() {
                                     <h5>
                                         <button onClick={() => decreaseQuantity(item)}>-</button> {item.quantity} <button onClick={() => increaseQuantity(item)}>+</button>
                                     </h5>
-                                    <h4>Price: ₹{item.price}.00</h4>
+                                    <h4>₹{item.price}.00</h4>
                                 </div>
                             );
                         })}

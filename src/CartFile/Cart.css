@@ -143,4 +143,10 @@
         height: 200px;
     }
 
+    .forMQ{
+        margin-top: 0px;
+        padding-top: 60px;
+        color: brown;
+    }
+
 }

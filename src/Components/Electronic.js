@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import { store } from "../Store/DataStore";
 import AddCardBtn from "../CartFile/AddCardBtn/AddCardBtn";
@@ -6,6 +6,12 @@ import AddCardBtn from "../CartFile/AddCardBtn/AddCardBtn";
 function Electronic() {
     
     const [Sdata] = useContext(store);
+
+    const [visibleItems, setVisibleItems] = useState(9);
+
+    const loadMore = () => {
+        setVisibleItems(prevVisibleItems => prevVisibleItems + 6);
+    };
 
     return(
         <>  
@@ -19,25 +25,23 @@ function Electronic() {
                                 <Link className="Link" to="/Electronic/Mobile/OnePlus"><li>OnePlus</li></Link>
                             </ul>
 
-                            {/* <h2 className="ECname">LapTop's</h2>
+                            <h2 className="ECname">LapTop's</h2>
                             <ul>
-                                <li>Lenovo</li>
-                                <li>Asus</li>
-                                <li>Apple</li>
+                                <Link className="Link" to="/Electronic/Laptop/Acer"><li>Acer</li></Link>
+                                <Link className="Link" to="/Electronic/Laptop/Apple"><li>Apple</li></Link>
                             </ul>
 
                             <h2 className="ECname">Watche's</h2>
                             <ul>
-                                <li>Rolex</li>
-                                <li>Sonata</li>
-                                <li>Patek Philippe</li>
-                            </ul> */}
+                                <Link className="Link" to="/Electronic/Watch/Noise"><li>Noise</li></Link>
+                                <Link className="Link" to="/Electronic/Watch/Fastrack"><li>Fastrack</li></Link>
+                            </ul>
                             <br/>
                         </div>
                     </div>
                     <div className="Eproduct">
                             <div className="bestproduct">
-                                {Sdata.filter((item) => item.category === "electronic").map((item, index) => {
+                                {Sdata.filter((item) => item.category === "electronic").slice(0, visibleItems).map((item, index) => {
                                     return(
                                         <>
                                         <div className="BPitem" key={index}>
@@ -57,6 +61,12 @@ function Electronic() {
                                 
 
                         </div><br/><br/>
+
+                        {visibleItems < Sdata.filter((item) => item.category === "electronic").length && (            
+                            <div className="loadmore">
+                                <button className="loadmorebtn" onClick={loadMore}>Lode More....</button>
+                            </div>
+                        )}<br/>
                     </div>
             </div>
             

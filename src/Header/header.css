@@ -6,6 +6,8 @@
     min-height: 50px;
     max-height: 80px;
     padding: 0px 35px;
+    position: fixed;
+    width: 100%;
 }
 
 .logo{
@@ -85,6 +87,8 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 14px;
+    position: fixed;
+    top: 60px;
 }
 
 .NavLink{
@@ -146,7 +150,7 @@
 @media only screen and (min-width: 200px) and (max-width:750px) {
 
     .menu{
-        position: absolute;
+        position: fixed;
         top: 0.75rem;
         right: 0.5rem;
         display: flex;
@@ -192,6 +196,10 @@
     .top2header{
         display: block;
         text-align: center;
+        position: fixed;
+        padding-top: 14px;
+        margin-top: -11px;
+        background-color: rgba(0, 0, 0, 0.5); 
     }
 
     .dropdown {
@@ -211,7 +219,7 @@
     }
     
     .searchbar{
-        width: 100%;
+        width: 180%;
         padding-top: 10px;
     }
     
@@ -226,7 +234,24 @@
     .cart1{
         display: none;
     }
+
+    .toponeH {
+        padding: 0px 0px;
+        position: fixed;
+        width: 100%;
+    }
+
+    .image-slider {
+        position: static;
+    }
     
+    .slider-arrow {
+        display: none;
+    }
+
+    .slider {
+        margin-top: 1px;
+    }
 }   
 
 
@@ -316,5 +341,22 @@
     .cart1{
         display: none;
     }
+
+    .slider-arrow{
+        top: 50%;
+    }
+
+    .forresponsive{
+        padding-top: 50px;
+    }
+    
+    .menu{
+        position: fixed;
+    }
+
+    .top2header {
+        background-image: repeating-linear-gradient(45deg, black, transparent 60px);
+        margin-top: -10px;
+    }    
     
 }   

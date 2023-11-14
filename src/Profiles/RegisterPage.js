@@ -20,7 +20,8 @@ function RegisterPage() {
         empty.push(userdetail)
         console.log(userdetail);
 
-        axios.post("https://ecom-backend-project.onrender.com/api/register", userdetail)
+        axios.post("https://ecommerce-project-8m5d.onrender.com/api/register", userdetail)
+        // axios.post("http://localhost:5008/api/register", userdetail)
                 .then((res) => {alert(res.data.message)
                 return navi("/login")})
                 .catch((err) => console.log(err))
@@ -34,7 +35,7 @@ function RegisterPage() {
     return(
         <>  
             <div className="login">
-                    <h1>Enter Your Details To Register</h1>
+                    <h1 className='forMQ'>Enter Your Details To Register</h1>
                     
                     <div className="forform">
                         <form>

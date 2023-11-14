@@ -29,13 +29,15 @@ function LoginPage() {
         }
 
         if(email && password) {
-            axios.post("https://ecom-backend-project.onrender.com/api/login", data)
+            axios.post("https://ecommerce-project-8m5d.onrender.com/api/login", data)
+            // axios.post("http://localhost:5008/api/login", data)
                     .then((res) => {
                         console.log(res.data);
                         setresponsemsg(res.data.message)
                         alert(res.data.message)
                         localStorage.setItem("token", res.data.token)
-
+                        localStorage.setItem("userId", res.data.userId)
+                        
                         if(res.data.message === "User is not correct. Please enter the correct details"){
                             navi("/login")
                         }else if(res.data.message === "user logged in successfully"){
@@ -58,7 +60,7 @@ function LoginPage() {
     return(
         <>  
             <div className="login">
-                    <h1>Enter Your Login Details</h1>
+                    <h1 className="forMQ">Enter Your Login Details</h1>
 
                 <div className="forform">
                     <form>

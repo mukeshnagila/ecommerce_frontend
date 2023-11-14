@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { store } from "../Store/DataStore";
 import AddCardBtn from "../CartFile/AddCardBtn/AddCardBtn";
 
-function Mobile() {
+function Fastrack() {
 
     const [Sdata] = useContext(store);
     // console.log(Sdata);
@@ -20,24 +20,23 @@ function Mobile() {
                                 <Link className="Link" to="/Electronic/Mobile/OnePlus"><li>OnePlus</li></Link>
                             </ul>
 
-                             <h2 className="ECname">LapTop's</h2>
+                            <h2 className="ECname">LapTop's</h2>
                             <ul>
-                                <li>Acer</li>
-                                <li>Apple</li>
+                                <Link className="Link" to="/Electronic/Laptop/Acer"><li>Acer</li></Link>
+                                <Link className="Link" to="/Electronic/Laptop/Apple"><li>Apple</li></Link>
                             </ul>
 
-                            {/*<h2 className="ECname">Watche's</h2>
+                            <h2 className="ECname">Watche's</h2>
                             <ul>
-                                <li>Rolex</li>
-                                <li>Sonata</li>
-                                <li>Patek Philippe</li>
-                            </ul> */}
+                                <Link className="Link" to="/Electronic/Watch/Noise"><li>Noise</li></Link>
+                                <Link className="Link" to="/Electronic/Watch/Fastrack"><li>Fastrack</li></Link>
+                            </ul>
                             <br/>
                         </div>
                     </div>
                     <div className="Eproduct">
                             <div className="bestproduct">
-                            {Sdata.filter((item) => item.subcategory === "mobile").map((item, index) => {
+                            {Sdata.filter((item) => item.minicategory === "Fastrack").map((item, index) => {
                                     return(
                                         <>
                                         <div className="BPitem" key={index}>
@@ -64,4 +63,4 @@ function Mobile() {
     )
 }
 
-export default Mobile;
+export default Fastrack;

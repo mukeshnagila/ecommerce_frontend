@@ -34,7 +34,7 @@
 } */
 
 .image-slider {
-    position: relative;
+    position: static;
   }
   
   .image-slider img {

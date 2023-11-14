@@ -8,6 +8,7 @@
     row-gap: 50px;
     flex-wrap: wrap;
     padding: 1% 0%;
+    position: static;
 }
 
 .BPitem{
@@ -143,6 +144,28 @@ li:hover{
     position: fixed;
 }
 
+.loadmorebtn{
+    width: 155px;
+    height: 30px;
+    background-color: lightskyblue;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.loadmore{
+    text-align: center;
+}
+
+.loadmorebtn:hover{
+    box-shadow: 5px 5px 10px 6px gray;
+    width: 165px;
+    height: 32px;
+    font-size: 15px;
+    font-style: italic;
+}
+
 /* ///////////////////////////////////MEDIA-QUARI/////////////////////// */
 
 @media only screen and (min-width:150px) and (max-width:750px) {
@@ -172,4 +195,27 @@ li:hover{
         /* background-color: #F6F7F8; */
         width: 100%;
     }
+
+    .bestproduct{
+        position: static;
+    }
+
+    .image-slider {
+        position: static;
+    }
+
+    .forresponsive{
+        padding-top: 60px;
+    }
 }
+
+
+@media only screen and (min-width:1000px) and (max-width:3000px) {
+    .forresponsive{
+        padding-top: 110px;
+    }
+
+    .toponeH{
+        z-index: 1000;
+    }
+}    
