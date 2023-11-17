@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from "react";
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from "../../Components/Home";
 import Electronic from "../../Components/Electronic";
 import Sports from "../../Components/Sports";
@@ -35,6 +35,7 @@ import Laptop from "../../SubCategory/Laptop";
 import Watch from "../../SubCategory/Watch";
 import Noise from "../../SubComponents/Noise";
 import Fastrack from "../../SubComponents/Fastrack";
+import SearchItem from "../../Search/SearchItem";
 
 
 function TopTwoHeader(){
@@ -65,7 +66,8 @@ function TopTwoHeader(){
     
           if (token) {
             try {
-              const response = await fetch("http://localhost:5008/api/finduser", {
+              const response = await fetch("https://ecommerce-project-8m5d.onrender.com/api/finduser", {
+                // const response = await fetch("http://localhost:5008/api/finduser", {
                 headers: {
                   Authorization: `Bearer ${token}`,
                 },
@@ -87,6 +89,14 @@ function TopTwoHeader(){
     
         fetchUserData();
       }, []);
+     
+    
+    const nav = useNavigate();  
+    const handelLogout = () => {
+        localStorage.removeItem("token")
+        nav('/login')
+        window.location.reload(true)
+    }
 
     return(
         <>
@@ -107,7 +117,8 @@ function TopTwoHeader(){
                         </NavLink>    
                     </div>
                     <div className="info formobile" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
-                        <NavLink to="/login" onClick={scrollToTop} className="NavLink" style={({isActive}) => ({color : isActive ? "lightgray" : "aliceblue"})}>{userData && userData.length > 0 ? userData[0].name : "Profile"}</NavLink>
+                        <NavLink to="/login" onClick={scrollToTop} className="NavLink" style={({isActive}) => ({color : isActive ? "lightgray" : "aliceblue"})}>{userData && userData.name ? userData.name.split(" ")[0] : "Profile"}</NavLink>
+                            <button className="LogOutBTN" onClick={handelLogout}>LogOut</button>
                             {isDropdownVisible && (
                                 <div className="dropdown-content">
                                 <ul>
@@ -246,6 +257,7 @@ function TopTwoHeader(){
                             <Route path="/login" element={<LoginPage />} />
                             <Route path="/register" element={<RegisterPage />} />
                             <Route path="/cart" element={<Cart />} />
+                            <Route path="/SearchItem" element={<SearchItem />} />
                     </Routes>
                 </DataStore>    
             </div>

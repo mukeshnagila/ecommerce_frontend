@@ -42,6 +42,7 @@ function LoginPage() {
                             navi("/login")
                         }else if(res.data.message === "user logged in successfully"){
                             navi("/")
+                            window.location.reload(true)
                         }else{
                             navi("/register")
                         }
@@ -59,21 +60,19 @@ function LoginPage() {
 
     return(
         <>  
-            <div className="login">
-                    <h1 className="forMQ">Enter Your Login Details</h1>
+            <div className="forlogin">
 
-                <div className="forform">
+                <div className="forLoginform">
                     <form>
                         <div className="logstyle">
-                            <h2 data-text="Login...">Login...</h2>
+                            <h2 data-text="Login...">Welcome Back...</h2>
                         </div>
-                        <label for="">Email : </label>
-                        <input type="email" name='email' onChange={handleInput} required /><br />
 
-                        <label for="">Password : </label>
-                        <input type="password" name='password' onChange={handleInput} required /><br />
+                        <input className="LogSigninput" type="email" placeholder="User Email" name='email' onChange={handleInput} required /><br />
 
-                        <button onClick={hendleSubmit}>Sign in</button>
+                        <input className="LogSigninput" type="password" placeholder="Password"  name='password' onChange={handleInput} required /><br />
+
+                        <button className="LogSignupButton" onClick={hendleSubmit}>Sign in</button>
 
                         <p>Not registered yet? <Link to="/register">Click Here</Link></p>
 

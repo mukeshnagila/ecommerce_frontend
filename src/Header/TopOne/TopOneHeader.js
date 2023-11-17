@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { AiOutlineSearch } from "react-icons/ai";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 function TopOneHeader(){
 
@@ -29,7 +30,8 @@ function TopOneHeader(){
     
           if (token) {
             try {
-              const response = await fetch("http://localhost:5008/api/finduser", {
+              const response = await fetch("https://ecommerce-project-8m5d.onrender.com/api/finduser", {
+                // const response = await fetch("http://localhost:5008/api/finduser", {
                 headers: {
                   Authorization: `Bearer ${token}`,
                 },
@@ -37,6 +39,13 @@ function TopOneHeader(){
     
               if (response.ok) {
                 const user = await response.json();
+                console.log("Fetched user data:", user);
+                
+                if (user && user.name) {
+                    setUserData(user);
+                } else {
+                    console.error("Invalid user data format");
+                }
                 setUserData(user);
               } else {
                 // Handle error when fetching user data
@@ -51,20 +60,46 @@ function TopOneHeader(){
     
         fetchUserData();
       }, []);
+
+    const [searchItem, setSearchItem] = useState("");
+    const handleInput = (e) => {
+        e.preventDefault();
+        setSearchItem(e.target.value);
+    }
+    const handleSearch = async () => {
+        try {
+            const response = await axios.get(`http://localhost:5008/api/search?searchItem=${searchItem}`);
+            const searchData = response.data;
+            console.log(response.data);
+            console.log(searchData.length);
+            if (searchData.length === 0) {
+                alert("Results not found!");
+                setSearchItem("");
+                nav("/");
+            }
+            else {
+                nav("/SearchItem", { state: { searchData, searchItem } });
+                setSearchItem("");
+            }
+        }
+        catch (err) {
+            console.log("Error searching:", err);
+        }
+    }
     
     return(
         <>
             <div className="allheader">
                 <div className="toponeH">
                     <div className="logo"></div>
-                    <div className="address"> <FaLocationDot />{userData && userData.length > 0 ? userData[0].address.substring(0, 20) : "this is your address"}......</div>
+                    <div className="address"> <FaLocationDot />{userData && userData.address ? userData.address.substring(0, 20) : "this is your address"}......</div>
                     <div className="searchbar">
-                        <input className="searchinput" placeholder="Find Your Item..............." />
-                        <button className="searchbtn"><AiOutlineSearch /></button>
+                        <input className="searchinput" value={searchItem}  onChange={handleInput} placeholder="Find Your Item..............." />
+                        <button className="searchbtn" onClick={handleSearch}><AiOutlineSearch /></button>
                     </div>
 
                     <div className="info info1 dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={handleDropdownToggle}>
-                    <NavLink className="NavLink" style={({isActive}) => ({color : isActive ? "lightgreen" : "aliceblue"})}>{userData && userData.length > 0 ? userData[0].name.split(' ')[0]  : "Profile"}</NavLink>
+                    <NavLink className="NavLink" style={({isActive}) => ({color : isActive ? "lightgreen" : "aliceblue"})}>{userData && userData.name ? userData.name.split(" ")[0] : "Profile"}</NavLink>
                         {isDropdownVisible && (
                             <div className="dropdown-content">
                             <ul>
@@ -98,3 +133,5 @@ function TopOneHeader(){
 }
 
 export default TopOneHeader;
+
+

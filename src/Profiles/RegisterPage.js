@@ -34,28 +34,25 @@ function RegisterPage() {
 
     return(
         <>  
-            <div className="login">
-                    <h1 className='forMQ'>Enter Your Details To Register</h1>
+            <div className="forRegister">
                     
-                    <div className="forform">
+                    <div className="forRegisterform">
                         <form>
+                            <div className="logstyle">
+                                <h2 data-text="Login...">Register Here...</h2>
+                            </div>
 
-                            <label for="">Name : </label>
-                            <input type="text" name='name' onChange={onChangehandle} required /><br />
+                            <input className="LogSigninput" type="text" name='name' placeholder='Enter Name....' onChange={onChangehandle} required /><br />
 
-                            <label for="">Phone : </label>
-                            <input type="number" name='mobile' onChange={onChangehandle} required /><br />
+                            <input className="LogSigninput" type="number" name='mobile' placeholder='Enter Mobile....' onChange={onChangehandle} required /><br />
 
-                            <label for="">Email : </label>
-                            <input type="email" name='email' onChange={onChangehandle} required /><br />
+                            <input className="LogSigninput" type="email" name='email' placeholder='Enter Email....' onChange={onChangehandle} required /><br />
 
-                            <label for="">Password : </label>
-                            <input type="password" name='password' onChange={onChangehandle} required /><br />
+                            <input className="LogSigninput" type="password" name='password' placeholder='Enter Password....' onChange={onChangehandle} required /><br />
 
-                            <label for="">Address : </label>
-                            <input type="text" name='address' onChange={onChangehandle} required /><br />
+                            <input className="LogSigninput" type="text" name='address' placeholder='Enter Address....' onChange={onChangehandle} required /><br />
 
-                            <button onClick={submithendle} value="Register">Register</button>
+                            <button className='LogSignupButton' onClick={submithendle} value="Register">Register</button>
 
                             <p>ALready registered? <Link to="/login">Click Here</Link></p>
 

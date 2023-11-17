@@ -1,24 +1,137 @@
-.login{
+/* ////////////////////////////////////////// For Login /////////////////////////////////////////// */
+
+.forlogin{
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_sbSlTvbaEi2cak2Yh_1UvFTSuSHU0azCw&usqp=CAU"); */
-    background-color: antiquewhite;
+    background-color: #2C497F;;
     background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
     background-size: contain;
     text-align: center;
-    margin-top: -1%;
+    margin-top: -2%;
+    padding: 55px 0px;
 }
 
-.forform{
-    background-color: aquamarine;
+.forLoginform{
+    margin: auto;
+    width: 25%;
+    padding: 10px 50px;
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 2px;
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.07);
+}
+
+
+
+
+/* //////////////////////// For Register /////////////////////////// */
+
+.forRegister{
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_sbSlTvbaEi2cak2Yh_1UvFTSuSHU0azCw&usqp=CAU"); */
+    background-color: #433B7C;
+    background-repeat: no-repeat;
     width: 100%;
-    height: 250px;
-    border-radius: 50%;
-    padding-top: 2%;
+    background-size: contain;
+    text-align: center;
+    margin-top: -2%;
+    padding: 55px 0px;
+}
+
+.forRegisterform{
+    margin: auto;
+    width: 25%;
+    padding: 10px 50px;
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 2px;
+    color: #fff;
+    -webkit-box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 0px 16px 9px rgba(0, 0, 0, 0.07);
+}
+
+
+/* /////////////////////////////// Both For Login And Register Also /////////////////////////////////////// */
+
+.LogSigninput{
+    font-size: 15px;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 14px 10px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+}
+
+.LogSigninput::placeholder{
+    color: rgb(170, 209, 246);
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
 }
 
 form{
     text-align: center;
     font-size: large;
     line-height: 35px;
+}
+
+.LogSignupButton {
+    display: inline-block;
+    padding: 15px 12px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: none;
+    border-radius: 2px;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.1);
+    background: #ED6A5E;
+    color: #fff;
+    width: 100%;
+}
+
+
+
+/* //////////////////////////////// Tab View ////////////////////////////////// */
+
+@media only screen and (min-width: 750px) and (max-width:1050px) {
+
+    .forRegisterform{
+        width: 45%;
+    }
+
+    .forLoginform{
+        width: 45%;
+    }
+
+}
+
+
+/* //////////////////////// Mobile View ///////////////////////////////////////////// */
+
+@media only screen and (min-width: 200px) and (max-width:750px) {
+
+    .forRegisterform{
+        width: 65%;
+    }
+
+    .forLoginform{
+        width: 65%;
+    }
+
 }
