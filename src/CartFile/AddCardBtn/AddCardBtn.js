@@ -71,7 +71,7 @@ const AddCardBtn = ({ product }) => {
       },
     };
 
-    axios.post('http://localhost:5008/api/addcart', data, config)
+    axios.get('https://ecommerce-project-8m5d.onrender.com/api/addcart', data, config)
       .then(res => {
         console.log(res.data, "by add cart btn");
         // if(res.data.code == 200){

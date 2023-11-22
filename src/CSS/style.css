@@ -205,7 +205,8 @@ li:hover{
     }
 
     .forresponsive{
-        padding-top: 60px;
+        padding-top: 0px;
+        padding-bottom: 10px;
     }
 }
 
