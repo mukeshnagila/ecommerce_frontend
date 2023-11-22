@@ -11,6 +11,7 @@ function Cart() {
     const dispatch = useDispatch();
     const nav = useNavigate();
 
+    // Wrap the initialization of "cartItems" in its own useMemo() Hook
     const memoizedCartItems = useMemo(() => cartItems, [cartItems]);
     const [totalAmount, setTotalAmount] = useState(0);
     const [isPaypalButtonVisible, setIsPaypalButtonVisible] = useState(true);
