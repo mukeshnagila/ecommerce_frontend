@@ -12,7 +12,8 @@ function Cart() {
     const nav = useNavigate();
 
     // Wrap the initialization of "cartItems" in its own useMemo() Hook
-    const memoizedCartItems = useMemo(() => cartItems, [cartItems]);
+    //next line is the simple warning ignore this 
+    const memoizedCartItems = useMemo(() => cartItems, [cartItems]);// eslint-disable-next-line 
     const [totalAmount, setTotalAmount] = useState(0);
     const [isPaypalButtonVisible, setIsPaypalButtonVisible] = useState(true);
 
