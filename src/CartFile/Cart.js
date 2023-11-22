@@ -7,14 +7,13 @@ import { addToCart, decreaseItemQuantity, placeOrderAction } from "./CartFunctio
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
-    const cartItems = useSelector((state) => state.cart.items) || [];
+    const cartItems = useSelector((state) => state.cart.items);
     const dispatch = useDispatch();
     const nav = useNavigate();
 
     // Wrap the initialization of "cartItems" in its own useMemo() Hook
     //next line is the simple warning ignore this 
-    const memoizedCartItems = useMemo(() => cartItems, [JSON.stringify(cartItems)]);
-
+    const memoizedCartItems = useMemo(() => cartItems, [cartItems]);// eslint-disable-next-line 
     const [totalAmount, setTotalAmount] = useState(0);
     const [isPaypalButtonVisible, setIsPaypalButtonVisible] = useState(true);
 
@@ -140,6 +139,8 @@ function Cart() {
 }
 
 export default Cart;
+
+
 
 
 /////////////////////////////////////////////// FrontEnd Payment End ///////////////////////////////////////////
