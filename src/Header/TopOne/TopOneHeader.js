@@ -68,7 +68,8 @@ function TopOneHeader(){
     }
     const handleSearch = async () => {
         try {
-            const response = await axios.get(`http://localhost:5008/api/search?searchItem=${searchItem}`);
+            // const response = await axios.get(`http://localhost:5008/api/search?searchItem=${searchItem}`);
+            const response = await axios.get(`https://ecommerce-project-8m5d.onrender.com/api/search?searchItem=${searchItem}`);
             const searchData = response.data;
             console.log(response.data);
             console.log(searchData.length);
